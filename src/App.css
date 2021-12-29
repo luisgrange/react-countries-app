@@ -22,17 +22,76 @@ body {
   color: var(--White);
 }
 
+/*  HEADER   */
+header{
+  background-color: var(--Dark-Blue);
+  padding: 20px 40px;
+}
+
+header .header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .header h1{
+  font-size: 20px;
+}
+.btn{
+  background-color: var(--Dark-Blue);
+  border: none;
+  outline: none;
+  color: var(--White);
+  cursor: pointer;
+}
+/*  Search  */
+.filter{
+  padding: 20px 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.c-search{
+  background-color: var(--Dark-Blue);
+  color: var(--White);
+  padding: .7rem;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  margin-bottom: 30px;
+  width: 100%;
+}
+.c-search::placeholder{
+  color: var(--White);
+
+}
+.filter .filter-form,
+.filter .options{
+  width: 100%;
+}
+.filter .options select{
+  background-color: var(--Dark-Blue);
+  color: var(--White);
+  padding: .7rem;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  width: 200px;
+}
+
+
 /*  Countries   */
 img{
   max-width: 100%;
-  border-radius: 5px 5px 0 0;
-  
 }
 .grid{
   display: grid;
   grid-template-columns: 1fr;
   gap: 40px;
   padding: 20px 40px;
+}
+.grid .image img{
+  border-radius: 5px 5px 0 0;
 }
 .country-info{
   background: var(--Dark-Blue);
@@ -44,16 +103,22 @@ img{
 .country-info h1{
   padding-bottom: 20px;
 }
-.country-info p{
-  font-weight: 600;
-  padding-bottom: 5px;
+.country-info h3{
+  padding-bottom: 15px;
 }
-.country-info p span{
+.country-info h4 span{
   font-weight: 300;
 }
+
+/*  Responsivo  */
 @media (min-width: 640px){
   .grid{
     grid-template-columns: repeat(2, 1fr);
+  }
+  .grid .image img{
+    width: 277.5px;
+    height: 120px;
+    object-fit: cover;
   }
 }
 
@@ -61,10 +126,46 @@ img{
   .grid{
     grid-template-columns: repeat(3, 1fr);
   }
+  .grid .image img{
+    width: 277.5px;
+    height: 140px;
+    object-fit: cover;
+  }
+    /*  Search  */
+  .filter{
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .c-search{
+    margin-bottom: 0;
+    width: 460px;
+  }
+
+  .filter .filter-form,
+  .filter .options{
+    width: auto;
+  }
+  .filter .options select{
+    display: inline-block;
+  }
 }
 
 @media (min-width: 920px){
   .grid{
     grid-template-columns: repeat(4, 1fr);
   }
+
+  .grid .image img{
+    width: 277.5px;
+    height: 180px;
+    object-fit: cover;
+  }
+
+  header .header h1{
+    font-size: 27px;
+  }
+
+
+
 }

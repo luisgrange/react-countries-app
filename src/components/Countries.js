@@ -30,10 +30,10 @@ export const Countries = () => {
                                 <img src={flag} alt={name}/>
                             </div>
                             <div className='country-info'>
-                                <h1>{name}</h1>
-                                <p>Population: <span>{population}</span></p>
-                                <p>Region: <span>{region}</span></p>
-                                <p>Capital: <span>{capital}</span></p>
+                                <h3>{name}</h3>
+                                <h4>Population: <span>{population}</span></h4>
+                                <h4>Region: <span>{region}</span></h4>
+                                <h4>Capital: <span>{capital}</span></h4>
                             </div>
                         </article>
                     )
