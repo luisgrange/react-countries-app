@@ -4,7 +4,7 @@
 :root{
   --Dark-Blue: hsl(209, 23%, 22%);                   /* (Dark Mode Elements)*/
   --Very-Dark-Blue: hsl(207, 26%, 17%);             /*(Dark Mode Background)*/
-  --Very-Dark-Blue : hsl(200, 15%, 8%);            /*(Light Mode Text)*/
+  --Very-Dark-Blue-Text : hsl(200, 15%, 8%);            /*(Light Mode Text)*/
   --Dark-Gray : hsl(0, 0%, 52%);                  /*(Light Mode Input)*/
   --Very-Light-Gray : hsl(0, 0%, 98%);           /*(Light Mode Background)*/
   --White : hsl(0, 0%, 100%);                   /*(Dark Mode Text & Light Mode Elements)*/
@@ -34,7 +34,7 @@ header .header{
   align-items: center;
 }
 header .header h1{
-  font-size: 20px;
+  font-size: 18px;
 }
 .btn{
   background-color: var(--Dark-Blue);
@@ -42,6 +42,12 @@ header .header h1{
   outline: none;
   color: var(--White);
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  
+}
+.btn svg{
+  margin-right: 10px;
 }
 /*  Search  */
 .filter{
@@ -110,6 +116,44 @@ img{
   font-weight: 300;
 }
 
+/*  LIGHT THEME   */
+body.light{
+  background-color: var(--Very-Light-Gray);
+}
+
+body.light header{
+  background-color: var(--white);
+  color: var(--Very-Dark-Blue-Text);
+  box-shadow: 0 0 6px 1px rgb(0 0 0 / 30%);
+
+}
+body.light header .btn{
+  background-color: transparent;
+  color: var(--Very-Dark-Blue-Text);
+}
+
+body.light .filter-form .c-search, 
+body.light .options select{
+  background-color: var(--white);
+  box-shadow: rgb(0 0 0 / 30%) 0px 3px 7px -5px;
+  color: var(--Dark-Gray);
+}
+body.light .filter-form .c-search::placeholder{
+  color: var(--Dark-Gray);
+}
+
+body.light .grid article{
+  background-color: var(--White);
+  box-shadow: rgb(0 0 0 / 30%) 0px 3px 7px -5px;
+  border-radius: 5px;
+}
+body.light .grid article .country-info{
+  background-color: transparent;
+}
+body.light .grid article .country-info h3, 
+body.light .grid article .country-info h4{
+  color: var(--Very-Dark-Blue-Text);
+}
 /*  Responsivo  */
 @media (min-width: 640px){
   .grid{

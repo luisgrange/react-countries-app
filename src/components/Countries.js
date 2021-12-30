@@ -27,7 +27,7 @@ export const Countries = () => {
                     return(
                         <article key={numericCode} >
                             <div className='image'>
-                                <img src={flag} alt={name}/>
+                                <img src={flag} alt={name} loading='lazy'/>
                             </div>
                             <div className='country-info'>
                                 <h3>{name}</h3>
