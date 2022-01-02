@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {FaArrowLeft} from 'react-icons/fa';
 import { Link, useParams } from 'react-router-dom';
+import './style/Country.css';
 
 export const Country = () => {
     const [country, setCountry] = useState([]);
@@ -11,7 +12,6 @@ export const Country = () => {
             const response = await fetch(`https://restcountries.com/v3.1/name/${name}`);
             const country = await response.json();
             setCountry(country);
-            console.log(country);
         }
         fetchCountry();
     }, [])
@@ -31,7 +31,7 @@ export const Country = () => {
                     //console.log(Object.values(currencies)[0].name);
                     return(
                         <>
-                            <article key={ccn3}>
+                            <article key={ccn3} className='grid'>
                                 <div className='country-image'>
                                     <img src={flags.png} alt={name.official}/>
                                 </div>
@@ -48,15 +48,14 @@ export const Country = () => {
                                     <h4>Languages: <span>{Object.values(languages).join(", ")}</span></h4>
                                 </div>
                                 <div>
-                                    <h4>Borders: 
+                                    <h4 className='border-title'>Border countries:</h4>
                                     {
                                         borders.map((border, index) => {
                                             return(
-                                                <span key={index}>{border}</span>
+                                                <span className='border' key={index}>{border}</span>
                                             )
                                         })
                                     }
-                                    </h4>
                                 </div>
                             </article>
                         </>
