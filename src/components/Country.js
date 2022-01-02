@@ -27,16 +27,36 @@ export const Country = () => {
 
                 {country.map((c) => {
                     const {name, flags, ccn3, population, region, subregion, languages, capital, currencies, borders, tld} = c;
-
+                    
+                    //console.log(Object.values(currencies)[0].name);
                     return(
                         <>
                             <article key={ccn3}>
                                 <div className='country-image'>
-                                    <img src={flags.png} alt={name.common}/>
+                                    <img src={flags.png} alt={name.official}/>
                                 </div>
                                 <div>
-                                    <h3>{name.common}</h3>
+                                    <h3>{name.official}</h3>
                                     <h4>Population: <span>{population}</span></h4>
+                                    <h4>Region: <span>{region}</span></h4>
+                                    <h4>Sub Region: <span>{subregion}</span></h4>
+                                    <h4>Capital: <span>{capital}</span></h4>
+                                </div>
+                                <div>
+                                    <h4>Top Level Domain: <span>{tld}</span></h4>
+                                    <h4>Currencies: <span>{Object.values(currencies)[0].name}</span></h4>
+                                    <h4>Languages: <span>{Object.values(languages).join(", ")}</span></h4>
+                                </div>
+                                <div>
+                                    <h4>Borders: 
+                                    {
+                                        borders.map((border, index) => {
+                                            return(
+                                                <span key={index}>{border}</span>
+                                            )
+                                        })
+                                    }
+                                    </h4>
                                 </div>
                             </article>
                         </>
