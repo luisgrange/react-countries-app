@@ -2,6 +2,19 @@ import React, {useState, useEffect} from 'react';
 import {FaArrowLeft} from 'react-icons/fa';
 import { Link, useParams } from 'react-router-dom';
 import './style/Country.css';
+/*
+    REFATORAR:
+     <div>
+        <h4 className='border-title'>Border countries:</h4>
+        {
+            borders.map((border, index) => {
+                return(
+                    <span className='border' key={index}>{border}</span>
+                )
+            })
+        }
+    </div>
+*/
 
 export const Country = () => {
     const [country, setCountry] = useState([]);
@@ -9,7 +22,7 @@ export const Country = () => {
 
     useEffect(() => {
         const fetchCountry = async () => {
-            const response = await fetch(`https://restcountries.com/v3.1/name/${name}`);
+            const response = await fetch(`https://restcountries.com/v3.1/name/${name.toLowerCase()}`);
             const country = await response.json();
             setCountry(country);
         }
@@ -47,16 +60,7 @@ export const Country = () => {
                                     <h4>Currencies: <span>{Object.values(currencies)[0].name}</span></h4>
                                     <h4>Languages: <span>{Object.values(languages).join(", ")}</span></h4>
                                 </div>
-                                <div>
-                                    <h4 className='border-title'>Border countries:</h4>
-                                    {
-                                        borders.map((border, index) => {
-                                            return(
-                                                <span className='border' key={index}>{border}</span>
-                                            )
-                                        })
-                                    }
-                                </div>
+                               
                             </article>
                         </>
                     )
