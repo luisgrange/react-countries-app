@@ -31,7 +31,8 @@ export const Countries = () => {
 
     //issue here, change this:
     const handleSChange = (el) =>{
-        
+        const c = [...countries];
+
         const newCountries = countries.filter(country => 
             country.region.toLowerCase().includes(el.toLowerCase())
         )

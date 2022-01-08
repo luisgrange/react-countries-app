@@ -4,10 +4,11 @@
     width: 200px;
 }
 .return-btn{
+    color: #fff;
     padding: .6rem;
     width: 80%;
     justify-content: center;
-    box-shadow: 0 3px 7px 0px rgba(0,0,0,.5);
+    box-shadow: 0 2px 3px -1px rgb(0 0 0 / 30%);
 }
 
 .country-image img{
@@ -37,4 +38,18 @@ h4 span{
     margin: 15px 0 0 10px;
     box-shadow: 0 3px 7px 0px rgba(0,0,0,.5);
     padding: .5rem;
+}
+
+body.light h3, body.light h4, body.light .return-btn{
+    color: hsl(200deg 15% 8%);
+}
+body.light .return-btn{
+    background-color: #fff;
+}
+
+@media(min-width: 920px){
+    .grid.single {
+        grid-template-columns: repeat(3, 1fr);
+        /* gap: 0px 70px; */
+    }
 }

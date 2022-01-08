@@ -39,12 +39,12 @@ export const Country = () => {
                 </div>
 
                 {country.map((c) => {
-                    const {name, flags, ccn3, population, region, subregion, languages, capital, currencies, borders, tld} = c;
+                    const {name, flags, ccn3, population, region, subregion, languages, capital, currencies, tld} = c;
                     
                     //console.log(Object.values(currencies)[0].name);
                     return(
                         <>
-                            <article key={ccn3} className='grid'>
+                            <article key={ccn3.toString()} className='grid single'>
                                 <div className='country-image'>
                                     <img src={flags.png} alt={name.official}/>
                                 </div>
